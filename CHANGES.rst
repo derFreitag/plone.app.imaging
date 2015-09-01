@@ -4,7 +4,8 @@ Changelog
 2.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix incompatibilities with five.pt and chameleon (closes `#16`_).
+  [rodfersou]
 
 
 2.0.0 (2015-05-11)
@@ -261,3 +262,5 @@ Changelog
 
 - Initial package structure.
   [zopeskel]
+
+.. _`#16`: https://github.com/collective/collective.cover/issues/16

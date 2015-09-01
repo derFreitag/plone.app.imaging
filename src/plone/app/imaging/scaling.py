@@ -58,7 +58,7 @@ class ImageScaling(BrowserView):
         stack = request.get('TraversalRequestNameStack')
         if stack:
             # field and scale name were given...
-            scale = stack.pop()
+            scale = stack[-1:]
             image = self.scale(name, scale)             # this is aq-wrapped
         elif '.' in name:
             # we got a uid...
@@ -82,7 +82,7 @@ class ImageScaling(BrowserView):
         if not furtherPath:
             field = self.context.getField(name)
             return field.get(self.context).tag()
-        image = self.scale(name, furtherPath.pop())
+        image = self.scale(name, furtherPath[-1:])
         if image is not None:
             return image.tag()
         raise TraversalError(self, name)

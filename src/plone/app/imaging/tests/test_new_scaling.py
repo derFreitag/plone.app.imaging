@@ -20,7 +20,7 @@ class ImageTraverseTests(ImagingTestCase):
     def traverse(self, path=''):
         view = self.image.unrestrictedTraverse('@@images')
         stack = path.split('/')
-        name = stack.pop(0)
+        name = stack[:1]
         tag = view.traverse(name, stack)
         base = self.image.absolute_url()
         expected = r'<img src="%s/@@images/([-0-9a-f]{36}).(jpeg|gif|png)" ' \
